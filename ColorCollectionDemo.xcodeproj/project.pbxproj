@@ -13,6 +13,9 @@
 		7C7EE2B6201D2108000A4FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C7EE2B4201D2108000A4FDD /* LaunchScreen.storyboard */; };
 		7C7EE2C1201D2108000A4FDD /* ColorCollectionDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EE2C0201D2108000A4FDD /* ColorCollectionDemoTests.swift */; };
 		7C7EE2CC201D23A8000A4FDD /* ColorCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EE2CB201D23A8000A4FDD /* ColorCollectionPresenter.swift */; };
+		7C7EE2D0201D2ABE000A4FDD /* UIColor+appleColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EE2CF201D2ABE000A4FDD /* UIColor+appleColors.swift */; };
+		7C7EE2D4201D2BA7000A4FDD /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EE2D3201D2BA7000A4FDD /* ColorModel.swift */; };
+		7C7EE2D6201D3785000A4FDD /* ColorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EE2D5201D3785000A4FDD /* ColorDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		7C7EE2C0201D2108000A4FDD /* ColorCollectionDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionDemoTests.swift; sourceTree = "<group>"; };
 		7C7EE2C2201D2108000A4FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C7EE2CB201D23A8000A4FDD /* ColorCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionPresenter.swift; sourceTree = "<group>"; };
+		7C7EE2CF201D2ABE000A4FDD /* UIColor+appleColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+appleColors.swift"; sourceTree = "<group>"; };
+		7C7EE2D3201D2BA7000A4FDD /* ColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		7C7EE2D5201D3785000A4FDD /* ColorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +89,9 @@
 				7C7EE2B4201D2108000A4FDD /* LaunchScreen.storyboard */,
 				7C7EE2B7201D2108000A4FDD /* Info.plist */,
 				7C7EE2CB201D23A8000A4FDD /* ColorCollectionPresenter.swift */,
+				7C7EE2CF201D2ABE000A4FDD /* UIColor+appleColors.swift */,
+				7C7EE2D3201D2BA7000A4FDD /* ColorModel.swift */,
+				7C7EE2D5201D3785000A4FDD /* ColorDetailsViewController.swift */,
 			);
 			path = ColorCollectionDemo;
 			sourceTree = "<group>";
@@ -198,9 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C7EE2D0201D2ABE000A4FDD /* UIColor+appleColors.swift in Sources */,
 				7C7EE2AE201D2108000A4FDD /* ColorCollectionViewController.swift in Sources */,
+				7C7EE2D6201D3785000A4FDD /* ColorDetailsViewController.swift in Sources */,
 				7C7EE2CC201D23A8000A4FDD /* ColorCollectionPresenter.swift in Sources */,
 				7C7EE2AC201D2108000A4FDD /* AppDelegate.swift in Sources */,
+				7C7EE2D4201D2BA7000A4FDD /* ColorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
