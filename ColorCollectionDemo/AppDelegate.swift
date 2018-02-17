@@ -13,16 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
 
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     window = UIWindow(frame: UIScreen.main.bounds)
-    let presenter = ColorCollectionPresenter()
-    let rootViewController = ColorCollectionViewController(with: presenter)
-    window?.rootViewController = rootViewController
+    window?.rootViewController = makeRootViewController()
     window?.makeKeyAndVisible()
     return true
   }
 
-
+  func makeRootViewController() -> UIViewController {
+    let model = ColorModelLocal()
+    let presenter = ColorCollectionPresenter(with: model)
+    return ColorCollectionViewController(with: presenter)
+  }
 }
-

@@ -9,12 +9,16 @@
 import UIKit
 
 class ColorCollectionPresenter: NSObject {
-  let model = ColorModel()
+  let model: ColorModel
   let backgroundColor: UIColor = .white
   private var colors: [UIColor] {
     return model.colors
   }
   private let cellIdentifier = "DefaultCell"
+
+  init(with model: ColorModel) {
+    self.model = model
+  }
 
   func updateColors(completion: @escaping (() -> ())) {
     self.model.updateColors {
@@ -46,3 +50,4 @@ extension ColorCollectionPresenter: UICollectionViewDataSource {
     return cell
   }
 }
+

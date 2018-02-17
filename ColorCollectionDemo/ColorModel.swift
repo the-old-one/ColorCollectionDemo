@@ -9,8 +9,14 @@
 import UIKit
 import GameplayKit
 
-class ColorModel {
+protocol ColorModel {
   typealias UpdateColorsCompl = () -> ()
+  var colors: [UIColor] { get }
+
+  func updateColors(completion: @escaping UpdateColorsCompl)
+}
+
+class ColorModelLocal: ColorModel {
   var colors: [UIColor] = []
 
   func updateColors(completion: @escaping UpdateColorsCompl) {
@@ -28,3 +34,4 @@ class ColorModel {
     .applePurple,
     ]
 }
+
