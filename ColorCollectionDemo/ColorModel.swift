@@ -6,32 +6,31 @@
 //  Copyright © 2018 Tugboat. All rights reserved.
 //
 
-import UIKit
 import GameplayKit
 
 protocol ColorModel {
-  typealias UpdateColorsCompl = () -> ()
-  var colors: [UIColor] { get }
+  typealias UpdateColorsCompl = (_ success: Bool) -> ()
+  var colors: [String] { get }
 
   func updateColors(completion: @escaping UpdateColorsCompl)
 }
 
 class ColorModelLocal: ColorModel {
-  var colors: [UIColor] = []
+  var colors: [String] = []
 
   func updateColors(completion: @escaping UpdateColorsCompl) {
     let random = GKRandomSource.sharedRandom()
-    self.colors = random.arrayByShufflingObjects(in: colorStorage) as! [UIColor]
-    completion()
+    self.colors = random.arrayByShufflingObjects(in: colorStorage) as! [String]
+    completion(true)
   }
 
-  private let colorStorage: [UIColor] = [
-    .appleRed,
-    .appleGreen,
-    .appleBlue,
-    .appleOrange,
-    .appleTeal,
-    .applePurple,
+  private let colorStorage: [String] = [
+    "#e74c3c",
+    "#f1c40f",
+    "#1abc9c",
+    "#9b59b6",
+    "#3498db",
+    "#2ecc71",
     ]
 }
 

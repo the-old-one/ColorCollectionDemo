@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    FirebaseApp.configure()
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.rootViewController = makeRootViewController()
     window?.makeKeyAndVisible()
@@ -21,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func makeRootViewController() -> UIViewController {
-    let model = ColorModelLocal()
+    let networkLayer = FirebaseLayer()
+    let model = ColorModelRemote(with: networkLayer)
     let presenter = ColorCollectionPresenter(with: model)
     return ColorCollectionViewController(with: presenter)
   }

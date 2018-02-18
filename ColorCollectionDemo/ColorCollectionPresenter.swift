@@ -11,7 +11,7 @@ import UIKit
 class ColorCollectionPresenter: NSObject {
   let model: ColorModel
   let backgroundColor: UIColor = .white
-  private var colors: [UIColor] {
+  private var colors: [String] {
     return model.colors
   }
   private let cellIdentifier = "DefaultCell"
@@ -21,14 +21,18 @@ class ColorCollectionPresenter: NSObject {
   }
 
   func updateColors(completion: @escaping (() -> ())) {
-    self.model.updateColors {
+    self.model.updateColors { success in
+      if success {
       completion()
+      } else {
+        print("can't update colors")
+      }
     }
   }
 
-  func color(for index: Int) -> UIColor? {
+  func color(for index: Int) -> String? {
     guard index < model.colors.count else { return nil }
-    return model.colors[index]
+    return self.colors[index]
   }
 
   func registerCells(for collectionView: UICollectionView) {
@@ -45,7 +49,7 @@ extension ColorCollectionPresenter: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-    cell.contentView.backgroundColor = colors[indexPath.row]
+    cell.contentView.backgroundColor = UIColor.init(hexString: colors[indexPath.row]) 
     cell.contentView.layer.cornerRadius = 20.0
     return cell
   }

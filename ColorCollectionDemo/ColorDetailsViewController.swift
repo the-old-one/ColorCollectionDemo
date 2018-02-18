@@ -9,20 +9,12 @@
 import UIKit
 
 class ColorDetailsPresenter {
-  let color: UIColor!
+  let color: String
   let colorDescription: String
 
-  init(with color: UIColor) {
-    self.color = color
-    if let components = color.cgColor.components {
-      self.colorDescription = """
-      R: \(components[0])
-      G: \(components[1])
-      B: \(components[2])
-      """
-    } else {
-      colorDescription = ""
-    }
+  init(with hexColor: String) {
+    self.color = hexColor
+    self.colorDescription = "Hex color: \(hexColor)"
   }
 }
 
@@ -39,7 +31,7 @@ class ColorDetailsViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = presenter.color
+    self.view.backgroundColor = UIColor.init(hexString: presenter.color)
     self.view.addSubview(descriptionLabel)
     setupConstraints()
     descriptionLabel.text = presenter.colorDescription
