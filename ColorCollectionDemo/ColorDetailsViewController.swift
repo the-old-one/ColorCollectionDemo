@@ -1,7 +1,3 @@
-//
-//  ColorDetailsViewController.swift
-//  ColorCollectionDemo
-//
 //  Created by Oleg Chernyshenko on 28/01/18.
 //  Copyright © 2018 Tugboat. All rights reserved.
 //
